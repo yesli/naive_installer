@@ -14,6 +14,7 @@ if [[ $? -ne 0 ]]; then
   echo -e "${red}下载失败，请确保你的服务器正常${plain}"
   exit 1
 fi
+mkdir caddy
 tar -C /usr/local/caddy -zxf /usr/local/caddy2-naive-linux-arm64.tar.gz
 rm caddy2-naive-linux-arm64.tar.gz -f
 read -p "请设置您的域名:" config_domain
