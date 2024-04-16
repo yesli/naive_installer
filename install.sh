@@ -5,9 +5,8 @@ green='\033[0;32m'
 yellow='\033[0;33m'
 plain='\033[0m'
 
-wget -o ~/caddy2-naive-linux-arm64.tar.gz https://gitlab.com/rwkgyg/naiveproxy-yg/-/raw/main/caddy2-naive-linux-arm64.tar.gz
+wget -P ~ https://gitlab.com/rwkgyg/naiveproxy-yg/-/raw/main/caddy2-naive-linux-arm64.tar.gz
 rm -r ~/caddy
-mkdir ~/caddy
 tar -C ~/caddy -zxf ~/caddy2-naive-linux-arm64.tar.gz
 read -p "请设置您的域名:" config_domain
 echo -e "${yellow}您的域名将设定为:${config_domain}${plain}"
