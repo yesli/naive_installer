@@ -33,6 +33,7 @@ read -p "请设置伪装网站（不带http/https):" config_fake
 echo -e "${yellow}伪装网站为:${config_fake}${plain}"
 echo -e "${green}正在生成配置文件！${plain}"
 cd caddy
+setcap cap_net_bind_service=+ep ./caddy
 echo -e "{\n\torder forward_proxy before reverse_proxy\n}" >> Caddyfile
 echo -e ":${config_port}, ${config_domain} {" >> Caddyfile
 echo -e "\ttls ${config_cert} ${config_key}" >> Caddyfile
