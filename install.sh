@@ -34,8 +34,9 @@ echo -e "${yellow}伪装网站为:${config_fake}${plain}"
 echo -e "${green}正在生成配置文件！${plain}"
 cd caddy
 echo -e "{\n\torder forward_proxy before file_server\n}" >> Caddyfile
-echo -e ":${config_port}, ${config_domain} {" >> Caddyfile
-echo -e "\ttls ${config_cert} ${config_key}" >> Caddyfile
+echo -e ":${config_port}, ${config_domain}" >> Caddyfile
+echo -e "tls ${config_cert} ${config_key}" >> Caddyfile
+echo -e "route {" >> Caddyfile
 echo -e "\tforward_proxy {" >> Caddyfile
 echo -e "\t\tbasic_auth ${config_user} ${config_pass}" >> Caddyfile
 echo -e "\t\thide_ip" >> Caddyfile
