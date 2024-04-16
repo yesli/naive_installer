@@ -47,3 +47,5 @@ echo -e "\t\theader_up  Host  { upstream_hostport }" >> Caddyfile
 echo -e "\t\theader_up  X-Forwarded-Host  { host }" >> Caddyfile
 echo -e "\t}" >> Caddyfile
 echo -e "}" >> Caddyfile
+touch /var/log/caddy/caddy.log
+touch caddy.env
