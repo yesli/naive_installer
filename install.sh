@@ -1,14 +1,12 @@
 #/bin/bash
-
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
 plain='\033[0m'
-
 wget -P ~ https://gitlab.com/rwkgyg/naiveproxy-yg/-/raw/main/caddy2-naive-linux-arm64.tar.gz
 rm -r ~/caddy
 tar -C ~/caddy -zxf ~/caddy2-naive-linux-arm64.tar.gz
-read -p "请设置您的域名:" config_domain
+read -p "请设置您的域名：" config_domain
 echo -e "${yellow}您的域名将设定为:${config_domain}${plain}"
 read -p "请设置您的监听端口:" config_port
 echo -e "${yellow}您的监听端口将设定为:${config_port}${plain}"
