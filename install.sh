@@ -5,6 +5,7 @@ green='\033[0;32m'
 yellow='\033[0;33m'
 plain='\033[0m'
 
+cd ~
 wget -N --no-check-certificate -O ~/caddy2-naive-linux-arm64.tar.gz https://gitlab.com/rwkgyg/naiveproxy-yg/-/raw/main/caddy2-naive-linux-arm64.tar.gz
 if [[ $? -ne 0 ]]; then
   echo -e "${red}下载失败，请确保你的服务器正常${plain}"
