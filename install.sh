@@ -49,3 +49,11 @@ echo -e "\t}" >> Caddyfile
 echo -e "}" >> Caddyfile
 touch /var/log/caddy/caddy.log
 touch caddy.env
+wget -N --no-check-certificate -O /etc/systemd/system/caddy.service https://raw.githubusercontent.com/yesli/naive_installer/main/caddy.service
+if [[ $? -ne 0 ]]; then
+  echo -e "${red}caddy.service下载失败！${plain}"
+  exit 1
+fi
+systemctl daemon-reload
+systemctl enable caddy
+echo -e "${green}安装完成！${plain}"
